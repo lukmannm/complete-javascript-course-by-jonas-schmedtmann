@@ -93,7 +93,6 @@ const isFullAge = ageFatimah >= 20;
 
 console.log(now - 2001 > now - 2005);
 
-
 ////////////////////////////////////
 //Operator Precendence
 // const now = 2028;
@@ -122,14 +121,12 @@ console.log(now - 2001 > now - 2005);
 
 // console.log(`Just a regular string...`);
 
-
 // console.log('String with \n\
 // Multiple \n\
 // line')
 // console.log(`String with 
 // Multiple 
 // line`)
-
 
 const age = 17;
 
@@ -211,7 +208,7 @@ if(favourite === 19) {
 }
 
 if(favourite !== 19) console.log('Why not 19?')
-*/
+
 const hasDriversLisence = true; // A
 const hasGoodVision = true; // B
 
@@ -233,3 +230,67 @@ if(hasDriversLisence && hasGoodVision && !isTired) {
 } else {
     console.log('Someone else should drive');
 }
+
+// Switch
+const day = 'sunday';
+
+switch(day){
+    case 'monday':
+        console.log('Learn Javascript Course');
+        break;
+    case 'tuesday':
+        console.log('Learn Math');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write an article for blog');
+        break;
+    case 'friday':
+        console.log('Build project for portofolio');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the Weekend :D');
+        break;
+    default:
+        console.log('Not a valid day!')
+}
+
+if(day === 'monday'){
+    console.log('Learn Javascript Course');
+} else if (day === 'tuesday'){
+    console.log('Learn Math');
+} else if (day === 'wednesday' || day === 'thursday'){
+    console.log('Write an article for blog');
+} else if (day === 'friday') {
+    console.log('Build project for portofolio');
+} else if(day === 'saturday' || day === 'sunday'){
+    console.log('Enjoy the Weekend :D');
+} else {
+    console.log('Not a valid day!');
+}
+
+19 + 21
+2001
+if(19 > 17) {
+    const str = '19 is bigger';
+}
+const me = 'Lukman';
+console.log(`I'm ${2025 - 2001} years old ${me}`);
+
+// Ternary Operator
+const age = 19;
+// age >= 18 ? console.log('I like to drink coffee') : console.log('I like to drink water');
+
+const drink = age >= 18 ? 'coffee' : 'water';
+console.log(drink);
+
+let drink2;
+if(age >= 18) {
+    drink2 = 'coffee';
+} else {
+    drink2 = 'water';
+}
+console.log(drink2);
+console.log(`I like to drink ${age >= 18 ? 'coffee' : 'water'}`);
+*/

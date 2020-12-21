@@ -72,38 +72,60 @@ There are two gymnastics teams, Dolphins and Koalas. They compete against each o
 TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
 TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
-
-
-
-const scoreDolphins = (96 + 108 + 89) / 3;
-const scoreKoalas = (88 + 91 + 110) / 3;
-// const scoreDolphins = (97 + 112 + 101) / 3;
-// const scoreKoalas = (109 + 95 + 123) / 3;
-console.log(scoreDolphins, scoreKoalas)
-
-if(scoreDolphins > scoreKoalas){
-    console.log('Team Dolphins win the Trophy 🏆');
-} else if(scoreKoalas > scoreDolphins){
-    console.log('Team Koalas win the Trophy 🏆');
-} else if(scoreDolphins === scoreKoalas){
-    console.log('Both team win the Trophy 🏆');
-} else {
-    console.log('No one wins the Trophy!');
-}
 */
 
-const scoreDolphins = (97 + 112 + 101) / 3;
-const scoreKoalas = (109 + 95 + 106) / 3;
-console.log(scoreDolphins, scoreKoalas);
 
-// answer bonus 1
-if(scoreDolphins > scoreKoalas && scoreDolphins >= 100){
-    console.log('Team Dolphins win the Trophy 🏆');
-} else if(scoreKoalas > scoreDolphins && scoreKoalas >= 100){
-    console.log('Team Koalas win the Trophy 🏆');
-} else if(scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100){
-    console.log('Both team win the Trophy 🏆');
-} else {
-    console.log('No one wins the Trophy!');
-}
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+// const scoreDolphins = (97 + 112 + 101) / 3;
+// const scoreKoalas = (109 + 95 + 123) / 3;
+// console.log(scoreDolphins, scoreKoalas)
+
+// if(scoreDolphins > scoreKoalas){
+//     console.log('Team Dolphins win the Trophy 🏆');
+// } else if(scoreKoalas > scoreDolphins){
+//     console.log('Team Koalas win the Trophy 🏆');
+// } else if(scoreDolphins === scoreKoalas){
+//     console.log('Both team win the Trophy 🏆');
+// } else {
+//     console.log('No one wins the Trophy!');
+// }
+
+// const scoreDolphins = (97 + 112 + 101) / 3;
+// const scoreKoalas = (109 + 95 + 106) / 3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// // answer bonus 1
+// if(scoreDolphins > scoreKoalas && scoreDolphins >= 100){
+//     console.log('Team Dolphins win the Trophy 🏆');
+// } else if(scoreKoalas > scoreDolphins && scoreKoalas >= 100){
+//     console.log('Team Koalas win the Trophy 🏆');
+// } else if(scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100){
+//     console.log('Both team win the Trophy 🏆');
+// } else {
+//     console.log('No one wins the Trophy!');
+// }
+
+////////////////////////////////////
+// Coding Challenge #4
+
+/*
+Steven wants to build a very simple tip calculator for whenever he goes eating in a resturant. In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to caluclate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement 😅 (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: 'The bill was 275, the tip was 41.25, and the total value 316.25'
+
+TEST DATA: Test for bill values 275, 40 and 430
+
+HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
+*/
+
+// const billTip = 275;
+// // const billTip = 40;
+// // const billTip = 430;
+// const tip = billTip >= 50 && billTip <= 300 ? billTip * 0.15 : billTip * 0.2;
+// console.log(`The bill was ${billTip}, the tip was ${tip}, and the total value ${billTip + tip}`);
+
+
 
