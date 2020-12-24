@@ -160,7 +160,7 @@ const lukmanArray = [
     'Programmer',
     ['Mugni', 'Dicki', 'Rahmat']
 ];
-*/
+
 //// Object
 const lukman = {
     firstName: 'Lukman',
@@ -182,7 +182,7 @@ const interestedIn = prompt('What do you want to know about Lukman? Choose betww
 if(lukman[interestedIn]){
     console.log(lukman[interestedIn]);
 } else {
-    console.log('Wrong!! Choose betwwen firstName, lastName, age, job, friends.')
+    console.log('Wrong!! Choose between firstName, lastName, age, job, friends.')
 }
 
 lukman.location = 'Indonesia';
@@ -194,3 +194,125 @@ console.log(lukman);
 
 
 console.log(`${lukman.firstName} has ${lukman.friends.length} friends and his best friend is called ${lukman.friends[0]}`);
+
+
+const lukman = {
+    firstName: 'Lukman',
+    lastName: 'Nur Hakim',
+    birthYear: 2001,
+    job: 'Programmer',
+    friends: ['Mugni', 'Dicki', 'Rahmat'],
+    hadDriversLicense: true,
+
+    // calcAge: function(){
+    //     // console.log(this);
+    //     return 2025 - this.birthYear;
+    // }
+
+    calcAge: function(){
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function(){
+        return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and he has ${this.hadDriversLicense === true ? 'a' : 'no'} driver's license`
+    }
+};
+// console.log(lukman.calcAge(2001));
+// console.log(lukman['calcAge'](2001));
+
+console.log(lukman.calcAge());
+console.log(lukman.age);
+console.log(lukman.age);
+console.log(lukman.age);
+
+// Challenge 
+// "Lukman is a 25 years old programming, and he has a driver's license"
+console.log(lukman.getSummary());
+
+//// Loops
+
+// for loop keeps running while condition is True
+for(let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weights repetition ${rep}`)
+}
+
+const lukman = [
+    'Lukman',
+    'Nur Hakim',
+    2025 - 2001,
+    'Programmer',
+    ['Mugni', 'Dicki', 'Rahmat']
+];
+
+const types = [];
+
+for(let i = 0; i < lukman.length; i++){
+    console.log(lukman[i], typeof lukman[i]);
+
+    // types[i] = typeof lukman[i];
+    types.push(typeof lukman[i])
+}
+
+console.log(types);
+
+const years = [2001, 2004, 2005, 2008];
+const ages = [];
+
+for(let i = 0; i < years.length; i++){
+    ages.push(2025 - years[i]);
+}
+
+console.log(ages);
+
+// continue and break
+console.log('---ONLY STRING---');
+for(let i = 0; i < lukman.length; i++){
+    if(typeof lukman[i] !== 'string') continue;
+
+    console.log(lukman[i], typeof lukman[i]);
+}
+
+console.log('---ONLY NUMBER---');
+for(let i = 0; i < lukman.length; i++){
+    if(typeof lukman[i] === 'number') break;
+
+    console.log(lukman[i], typeof lukman[i]);
+}
+
+const lukman = [
+    'Lukman',
+    'Nur Hakim',
+    2025 - 2001,
+    'Programmer',
+    ['Mugni', 'Dicki', 'Rahmat']
+];
+
+for(let i = lukman.length - 1; i >= 0; i--){
+    console.log(lukman[i]);
+}
+
+for(let exercise = 1; exercise < 4; exercise++){
+    console.log(`---------EXERCISE STARTING`);
+    for(let rep = 1; rep < 6; rep++){
+        console.log(`Exercise ${exercise}: Lifting weights repetition ${rep}`);
+    }
+}
+*/
+// While
+// for(let rep = 1; rep <= 10; rep++){
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+// let rep = 1;
+// while (rep <= 10){
+//     console.log(`While: Lifting weights reptition ${rep}`);
+//     rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) console.log('Loop is about to end...');
+}
