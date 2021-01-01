@@ -56,7 +56,6 @@ HINT: Use an if/else statement 😉
 //     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
 // }
 
-
 ////////////////////////////////////
 // Coding Challenge #3
 
@@ -73,7 +72,6 @@ TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
 TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 */
-
 
 // const scoreDolphins = (96 + 108 + 89) / 3;
 // const scoreKoalas = (88 + 91 + 110) / 3;
@@ -127,8 +125,6 @@ HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
 // const tip = billTip >= 50 && billTip <= 300 ? billTip * 0.15 : billTip * 0.2;
 // console.log(`The bill was ${billTip}, the tip was ${tip}, and the total value ${billTip + tip}`);
 
-
-
 //////////// Part 2
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -170,8 +166,6 @@ TEST DATA 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 // console.log(avgDolhins, avgKoalas);
 // checkWinner(avgDolhins, avgKoalas);
 
-
-
 ///////////////////////////////////////
 // Coding Challenge #2
 
@@ -194,7 +188,6 @@ TEST DATA: 125, 555 and 44
 // const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 // console.log(bills, tips, totals);
-
 
 ///////////////////////////////////////
 // Coding Challenge #3
@@ -240,7 +233,6 @@ TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 //     console.log(`${john.fullName};s (${john.bmi}) BMI is higher than ${mark.fullName} (${mark.bmi})`)
 // }
 
-
 ///////////////////////////////////////
 // Coding Challenge #4
 
@@ -261,7 +253,6 @@ HINT: Call calcTip in the loop and use the push method to add values to the tips
   4.3. Call the function with the 'totals' array
 
 */
-
 
 // const calcTip = function(x){
 //     return x >= 50 && x <= 300 ? x * 0.15 : x * 0.2;
@@ -288,3 +279,19 @@ HINT: Call calcTip in the loop and use the push method to add values to the tips
 
 // console.log(calcAverage(totals));
 // console.log(calcAverage(tips));
+
+function filter_list(l) {
+  // Return a new array with the strings filtered out
+  const arr = [];
+  for (let i = 0; i < l.length; i++) {
+    // if (typeof l[i] === "number") {
+    //   arr.push(l[i]);
+    // } else {
+    //   console.log("Nothing happend!");
+    // }
+    typeof l[i] === "number" ? arr.push(l[i]) : console.log("Nothing Much!");
+  }
+  console.log(arr);
+}
+
+console.log(filter_list([1, 2, "a", "b"]));
