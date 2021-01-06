@@ -29,7 +29,118 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your declitious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
+  orderPizza: function (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients);
+    console.log(otherIngredients);
+  },
 };
+
+//////////////////////
+// // Nullish: null and undefined (NOT 0 or '')
+restaurant.numGuess = 0;
+const guess = restaurant.numGuess || 11;
+console.log(guess);
+const guessCorrect = restaurant.numGuess ?? 11;
+console.log(guessCorrect);
+//////////////////////
+//// Short circuiting
+// use ANY data type return ANY data, short-circuiting
+// console.log('--- OR ---');
+// console.log(2 || 'Hello');
+// console.log('' || 'Lukman');
+// console.log(true || 'Hello');
+// console.log(undefined || null);
+// console.log(undefined || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuess = 29;
+// const guess1 = restaurant.numGuess ? restaurant.numGuess : 11;
+// console.log(guess1);
+// const guess2 = restaurant.numGuess || 11;
+// console.log(guess2);
+// console.log('--- AND ---');
+// console.log(null && 2);
+// console.log(2 && 'Lukman');
+// console.log('Hi' && true && 23 && null && 0);
+
+// if (restaurant.orderPizza)
+//   restaurant.orderPizza('mushrooms', 'onion', 'cheese');
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'onion', 'cheese');
+//////////////////////
+//// Rest pattern and Parameters
+// // 1) Destructuring
+// // Spread, because on right side =
+// const arr = [1, 2, ...[4, 5]];
+
+// // Rest, because on left side =
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others);
+// const [pizza, pasta, ...other] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, pasta, other);
+
+// // Object
+// const { sat, ...weekends } = restaurant.openingHours;
+// console.log(weekends);
+
+// // 2) Function
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 4);
+// add(2, 3, 4, 5, 6, 7);
+// add(2, 3, 4, 5, 6, 7, 8, 9);
+
+// const x = [2, 5, 6];
+// add(...x);
+
+// restaurant.orderPizza('Mushrooms', 'Onion', 'Olives', 'Spinach');
+// restaurant.orderPizza('Mushrooms');
+//////////////////////
+//// Spread Operator
+// const arr = [5, 6, 7, 8];
+// const newArr = [1, 2, 3, 4, ...arr];
+// console.log(newArr);
+// console.log(...arr);
+// const newMenu = [...restaurant.mainMenu, 'Nasi Goreng'];
+// console.log(newMenu);
+// // Copy arrays
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// // Join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// // Iterables: arrays, strings, maps, sets, NOT Object!
+// const str = 'Lukman';
+// const arrs = [...str, '', '.L'];
+// console.log(arrs);
+// console.log(...str);
+
+// // Real-World
+// // const ingredients = [
+// //   prompt(`Let's make pasta! ingredients 1:`),
+// //   prompt(`ingredients 2:`),
+// //   prompt(`ingredients 3:`),
+// // ];
+// // restaurant.orderPasta(...ingredients);
+
+// // Object
+// const newRestaurant = { foundedIn: 1987, ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurant);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Italian Restaurant';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 //////////////////////
 //// Destructuring Object
 
