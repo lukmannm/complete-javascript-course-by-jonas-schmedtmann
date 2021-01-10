@@ -38,6 +38,26 @@ const game = {
     team2: 6.5,
   },
 };
+/*
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+*/
+
 // Challenge 2
 /* 
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
@@ -64,6 +84,7 @@ const gameEvents = new Map([
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
 ]);
+/*
 const events = new Set([...gameEvents.values()]);
 console.log(events);
 gameEvents.delete(64);
@@ -79,6 +100,7 @@ for (const [key, values] of gameEvents) {
   let event = key <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${event} HALF]${key}: ${values}`);
 }
+*/
 
 // Challenge 2
 /*

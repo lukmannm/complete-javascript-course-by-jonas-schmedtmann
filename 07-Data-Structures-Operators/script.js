@@ -42,6 +42,157 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+/*
+///////////////////////////////////////
+// Working With Strings - Part 3
+
+// Split and Join
+console.log('a-very-nice-string'.split('-'));
+console.log('Lukman Nur Hakim'.split(' '));
+
+const [firstName, lastName] = 'Lukman Nurhakim'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalization = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  for (const n of names) namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+
+  console.log(namesUpper.join(' '));
+};
+
+capitalization('lukman ahmad mugni yusuf dicky');
+
+// Padding
+const message = 'Go to gate 25!';
+console.log(message.padStart(20, '-').padEnd(30, '-'));
+console.log('lukman'.padStart(20, '-').padEnd(30, '-'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const num = str.slice(-4);
+  return num.padStart(str.length, '*');
+};
+console.log(maskCreditCard(6123323132836));
+console.log(maskCreditCard(41233864647384));
+console.log(maskCreditCard('334859493847755774747'));
+
+// Repeat
+const message2 = 'Today we are going to work... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(15);
+planesInLine(4);
+*/
+/*
+///////////////////////////////////////
+// Working With Strings - Part 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'lUkmAN'; // Lukman
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails;
+const email = 'lukman9bnurhakim9b@gmail.com';
+const loginEmail = '  Lukman9bNurhakim9b@Gmail.com \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = '199,77£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 25. Boarding door 25!';
+// console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('Airb'));
+console.log(plane.includes('Beoing'));
+console.log(plane.includes('neo'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Arirbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board!');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+*/
+/*
+///////////////////////////////////////
+// Working With Strings - Part 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B767'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.lastIndexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and C are middle seats;
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'C') console.log('You got the middle seat');
+  else console.log('You got lucky');
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('lukman'));
+console.log(typeof new String('lukman'));
+
+console.log(typeof new String('lukman').slice(1));
+*/
+/*
 ///////////////////////////////////////
 // Maps: Iteration
 const question = new Map([
@@ -55,6 +206,7 @@ const question = new Map([
   [false, 'Try again!'],
 ]);
 console.log(question);
+
 
 // Conver object to map
 console.log(Object.entries(openingHours));
@@ -81,6 +233,7 @@ console.log([...question]);
 // console.log([question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+*/
 /*
 ///////////////////////////////////////
 // Maps: Fundamentals
