@@ -57,7 +57,25 @@ someVariable        ✅✅✅
 calculateAge        ✅✅✅✅
 delayedDeparture    ✅✅✅✅✅
 */
+/*
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+*/
 // Challenge 2
 /* 
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
