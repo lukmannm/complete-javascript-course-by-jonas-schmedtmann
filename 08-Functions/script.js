@@ -50,7 +50,7 @@ const newPassport = function (person) {
 };
 newPassport(lukman);
 checkIn(flight, lukman);
-*/
+
 ///////////////////////////////////////
 // Functions Accepting Callback Functions
 const oneWord = function (str) {
@@ -72,3 +72,91 @@ const transformer = function (str, fn) {
 
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
+
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log('Hi!');
+};
+document.body.addEventListener('click', high5);
+['Lukman', 'Marta', 'Mugni'].forEach(high5);
+
+///////////////////////////////////////
+// Functions Returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Lukman');
+greeterHey('Mugni');
+
+greet('Hi')('Lukman');
+
+// Challenge
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hello')('Lukman');
+*/
+///////////////////////////////////////
+// The call and apply Methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flightNum: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(234, 'Lukman Nur Hakim');
+lufthansa.book(523, 'Ahmad Mugni');
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+// Does NOT work
+// book(23, 'Sarah Williams');
+
+// Call method
+book.call(eurowings, 24, 'Yusuf Jaelani');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Sahrul Hermansyah');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 384, 'Halimah');
+
+// Apply method
+const flightData = [382, 'Marta Ardinata'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
+
+///////////////////////////////////////
+// The bind Method
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Tiara Damayanti');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Lukman Nur Hakim');
+bookEW23('Marta Ardinata');
