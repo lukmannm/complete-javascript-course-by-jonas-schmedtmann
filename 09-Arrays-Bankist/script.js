@@ -74,7 +74,7 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
+/*
 /////////////////////////////////////////////////
 // Simple Array Methods
 let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -112,3 +112,43 @@ console.log([...arr, ...arr2]);
 
 console.log('--- JOIN ---');
 console.log(letters.join('-'));
+
+
+///////////////////////////////////////
+// Looping Arrays: forEach
+
+// for (const movement of movements)
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrem ${Math.abs(movement)}`);
+  }
+}
+
+console.log('---- FOREACH ----');
+movements.forEach((mov, i, arr) => {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
+
+///////////////////////////////////////
+// forEach With Maps and Sets
+// Map
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['IDR', 'Rupiah']
+// ])
+
+currencies.forEach((value, key, map) => {
+  console.log(`${key}: ${value}`);
+});
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach((value, _, map) => console.log(`${value}: ${value}`));
+*/
