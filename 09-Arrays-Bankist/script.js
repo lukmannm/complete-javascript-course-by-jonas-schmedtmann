@@ -151,4 +151,84 @@ currencies.forEach((value, key, map) => {
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
 console.log(currenciesUnique);
 currenciesUnique.forEach((value, _, map) => console.log(`${value}: ${value}`));
+
+
+///////////////////////////////////////
+// The map Method
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescriptions);
+
+///////////////////////////////////////
+// The filter Method
+const deposits = movements.filter((mov, i, arr) => mov > 0);
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+const withdrawalsFor = [];
+for (const mov of movements) if (mov < 0) withdrawalsFor.push(mov);
+console.log(withdrawalsFor);
+
+///////////////////////////////////////
+// The reduce Method
+console.log(movements);
+// accumulator -> SNOWBALL
+const balance = movements.reduce((acc, cur, i, arr) => {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+function positiveSum(arr) {
+  console.log(arr.filter(a => a >= 0).reduce((a, c) => a + c, 0));
+}
+positiveSum([-1, 2, 3, 4, -5]);
+
+// Maximum Value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+
+console.log(max);
+
 */
+///////////////////////////////////////
+// The Magic of Chaining Methods
+const eurToUsd = 1.1;
+console.log(movements);
+
+// PIPELINE
+const totalDepositsUSD = movements
+  .filter(move => move > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
